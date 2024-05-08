@@ -1,12 +1,18 @@
 import type {Metadata} from "next";
-import {Inter} from "next/font/google";
+import {Outfit} from "next/font/google";
 import "./globals.css";
 import React, {ReactNode} from "react";
+import BodyLayout from "@/components/layout/body/bodyLayout";
+import {twJoin} from "tailwind-merge";
 
-const inter = Inter({subsets: ["latin"]});
+const outfit = Outfit({subsets: ["latin"], weight: ["400", "500"]});
 
+const siteName = "| Tutorial Blog";
 export const metadata: Metadata = {
-    title: "Tutorial Blog",
+    title: {
+        default: `Home ${siteName}`,
+        template: `%s ${siteName}`
+    },
 };
 
 type Props = {
@@ -16,8 +22,10 @@ type Props = {
 const RootLayout = ({children}: Props): ReactNode => {
     return (
         <html lang="nl-NL">
-        <body className={inter.className}>
-        {children}
+        <body className={twJoin(outfit.className, "text-slate-900 bg-orange-100 w-full h-full text-xl")}>
+        <BodyLayout>
+            {children}
+        </BodyLayout>
         </body>
         </html>
     );
