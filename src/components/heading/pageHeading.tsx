@@ -6,7 +6,7 @@ type Props = {
 
 const PageHeading = ({title}: Props) => {
     return (
-        <h1 className={"font-bold text-3xl md:text-5xl"}>
+        <h1 className={"font-bold text-4xl md:text-7xl"}>
             {title}
         </h1>
     );

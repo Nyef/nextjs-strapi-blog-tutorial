@@ -22,7 +22,7 @@ type Props = {
 const RootLayout = ({children}: Props): ReactNode => {
     return (
         <html lang="nl-NL">
-        <body className={twJoin(outfit.className, "text-slate-900 bg-orange-100 w-full h-full text-xl")}>
+        <body className={twJoin(outfit.className, "text-slate-900 bg-orange-100 w-full h-full text-lg md:text-xl")}>
         <BodyLayout>
             {children}
         </BodyLayout>

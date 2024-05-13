@@ -13,7 +13,7 @@ const BodyLayout = ({children}: Props) => {
         <div className={"w-full h-full"}>
             <NavBar/>
 
-            <main className={"w-full min-h-screen transition-all mt-14 md:mt-20"}>
+            <main className={"w-full min-h-screen transition-all mt-14 md:mt-20 py-3 md:py-6"}>
                 <Container className={containerPaddingY}>
                     {children}
                 </Container>

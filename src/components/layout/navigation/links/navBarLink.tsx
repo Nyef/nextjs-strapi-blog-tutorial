@@ -17,7 +17,7 @@ const NavBarLink = ({name, href}: Props) => {
         <li>
             <Link
                 className={twJoin(
-                    "underline-offset-4 decoration-2 md:underline-offset-8 md:decoration-4 decoration-dashed ",
+                    "underline-offset-4 decoration-2 md:underline-offset-8 md:decoration-4 decoration-dashed",
                     pathname === href
                         ? "underline decoration-slate-900"
                         : "hover:underline decoration-slate-900/20"
