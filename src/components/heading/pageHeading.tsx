@@ -1,13 +1,17 @@
 import React from "react";
+import {twMerge} from "tailwind-merge";
 
-type Props = {
-    title: string,
-};
-
-const PageHeading = ({title}: Props) => {
+const PageHeading = ({
+                         children,
+                         className,
+                         ...h1Props
+                     }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => {
     return (
-        <h1 className={"font-bold text-4xl md:text-7xl"}>
-            {title}
+        <h1
+            {...h1Props}
+            className={twMerge("font-bold text-4xl md:text-7xl", className)}
+        >
+            {children}
         </h1>
     );
 };

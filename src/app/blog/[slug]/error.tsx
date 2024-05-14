@@ -1,16 +1,15 @@
+"use client";
 import React from "react";
 import PageHeading from "@/components/heading/pageHeading";
-import BlogOverview from "@/components/blog/overview/blogOverview";
 
-const Home = () => {
+const Error = () => {
     return (
         <div>
             <PageHeading>
-                Duik in onze blog!
+                404 - Kan blog post niet vinden!
             </PageHeading>
-            <BlogOverview/>
         </div>
     );
-}
+};
 
-export default Home;
+export default Error;

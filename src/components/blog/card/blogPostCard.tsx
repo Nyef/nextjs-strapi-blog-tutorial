@@ -25,7 +25,7 @@ const BlogPostCard = ({blogPost, prominent = false}: Props) => {
                     ? "border-[2px] border-solid border-slate-900 gap-4"
                     : "xs:flex-row gap-3",
             )}
-            href={"#"}
+            href={`/blog/${blogPost.slug}`}
             title={blogPost.title}
             itemType="https://schema.org/BlogPosting"
             itemProp="blogPost"

@@ -52,9 +52,10 @@ export type BlogPostPreview = {
     author: AuthorPreview,
 };
 
-export type BlogPost = BlogPostPreview & {
+export type BlogPost = Omit<BlogPostPreview, "author"> & {
     content: string,
     seoMetadata: SeoMetadata,
+    author: Author,
 };
 
 

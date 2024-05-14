@@ -24,8 +24,7 @@ const BlogPostMetadata = ({blogPost}: Props) => {
                 <meta itemProp="name" content={"Blog Tutorial"}/>
             </div>
 
-            {/* TODO - URL: */}
-            <meta itemProp="url" content={"#"}/>
+            <meta itemProp="url" content={`https://mysite.com/blog/${blogPost.slug}`}/>
             <div itemProp="image" itemScope itemType="https://schema.org/ImageObject">
                 <meta itemProp="url" content={blogPost.cover}/>
             </div>

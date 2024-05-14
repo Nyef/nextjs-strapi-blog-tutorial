@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 const AboutUs = () => {
     return (
         <div>
-            <PageHeading title={pageTitle}/>
+            <PageHeading>
+                {pageTitle}
+            </PageHeading>
 
             <p className={"mt-4 md:mt-8 w-full max-w-2xl text-xl md:text-2xl text-slate-700"}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt eget odio at vehicula.

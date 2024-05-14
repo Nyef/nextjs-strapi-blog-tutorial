@@ -1,4 +1,4 @@
-import {BlogPostPreview, FilterOnTag, Page} from "@/lib/types";
+import {BlogPost, BlogPostPreview, FilterOnTag, Page} from "@/lib/types";
 
 export const getAllTagsToFilterOn = async (): Promise<FilterOnTag[]> => ([
     {
@@ -30,6 +30,117 @@ export const getAllTagsToFilterOn = async (): Promise<FilterOnTag[]> => ([
         filter: false,
     },
 ]);
+
+export const getBlogPost = async (slug: string): Promise<BlogPost> => {
+    return {
+        title: "Lorem Ipsum Blog Post",
+        publishedOn: "2024-05-09T22:10:00.000Z",
+        formattedPublishedOn: "9 mei 2024",
+        modifiedOn: null,
+        formattedModifiedOn: null,
+        tags: [
+            {
+                name: "My Tag 1",
+                icon: "/icon.svg",
+                accentColor: "#d1fae5",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae rhoncus massa.",
+            },
+            {
+                name: "My Tag 3",
+                icon: "/icon.svg",
+                accentColor: "#fce7f3",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae rhoncus massa.",
+            }
+        ],
+        cover: "/placeholder.svg",
+        slug: "tips-for-effective-time-management",
+        author: {
+            name: "Alice Johnson",
+            avatar: "/profile.svg",
+            biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.",
+        },
+        content: "" +
+            "**Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.**\n" +
+            "\n" +
+            "## Section 1\n" +
+            "\n" +
+            "Lorem _ipsum dolor sit_ amet, consectetur [adipiscing](#) elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "### Subsection 1.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "#### Subsubsection 1.1.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "##### Subsubsubsection 1.1.1.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "###### Subsubsubsubsection 1.1.1.1.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "## Section 2\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "### Subsection 2.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "- Item 1\n" +
+            "- Item 2\n" +
+            "- Item 3\n" +
+            "\n" +
+            "#### Subsubsection 2.1.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "1. Item 1\n" +
+            "2. Item 2\n" +
+            "3. Item 3\n" +
+            "\n" +
+            "##### Subsubsubsection 2.1.1.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "###### Subsubsubsubsection 2.1.1.1.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "## Section 3\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "### Subsection 3.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "#### Subsubsection 3.1.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "##### Subsubsubsection 3.1.1.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "###### Subsubsubsubsection 3.1.1.1.1\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n" +
+            "## Conclusion\n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
+            "\n",
+        // TODO- images
+            // "<img src=\"https://nyef.nl/blog/eerste-duik-in-python-van-javascript-developer/cover-600x.png\" alt=\"descriptive text\" style=\"max-width: 100%; height: auto;\" />",
+        seoMetadata: {
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.",
+        },
+    };
+};
 
 export const getBlogPosts = async (): Promise<Page<BlogPostPreview>> => ({
     data: [
