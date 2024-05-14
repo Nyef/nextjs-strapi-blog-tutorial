@@ -1,28 +1,30 @@
 import React from "react";
 import type {Metadata} from "next";
 import PageHeading from "@/components/heading/pageHeading";
+import {getAboutUs} from "@/lib/data";
+import {AboutUs} from "@/lib/types";
 
-const pageTitle = "Over ons";
-export const metadata: Metadata = {
-    title: pageTitle,
-    description: "...",
+export async function generateMetadata(): Promise<Metadata> {
+    const aboutUs: AboutUs = await getAboutUs();
+    return {
+        title: aboutUs.title,
+        description: aboutUs.seoMetadata.description,
+    }
 }
 
-const AboutUs = () => {
+const AboutUsPage = async () => {
+    const aboutUs: AboutUs = await getAboutUs();
     return (
         <div>
             <PageHeading>
-                {pageTitle}
+                {aboutUs.title}
             </PageHeading>
 
             <p className={"mt-4 md:mt-8 w-full max-w-2xl text-xl md:text-2xl text-slate-700"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt eget odio at vehicula.
-                Maecenas a mauris vitae leo viverra fermentum. Nunc non ullamcorper augue. Integer felis quam, pulvinar
-                eget ipsum vel, iaculis dictum nulla. In volutpat accumsan urna non auctor. In sit amet egestas mauris.
-                Donec sem odio, imperdiet at dui at, euismod tristique ex.
+                {aboutUs.description}
             </p>
         </div>
     );
 }
 
-export default AboutUs;
+export default AboutUsPage;

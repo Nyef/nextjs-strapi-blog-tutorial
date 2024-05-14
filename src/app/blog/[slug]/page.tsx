@@ -40,7 +40,7 @@ const Page = async ({params}: Props) => {
     const blogPost = await getBlogPost(params.slug);
     return (
         <article
-            className={"w-full flex flex-col gap-4 max-w-[700px] mx-auto py-8 md:py-12"}
+            className={"w-full flex flex-col gap-4 max-w-[700px] mx-auto py-6 md:py-12"}
             itemScope
             itemType="https://schema.org/BlogPosting"
         >

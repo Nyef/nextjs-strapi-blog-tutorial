@@ -1,4 +1,17 @@
-import {BlogPost, BlogPostPreview, FilterOnTag, Page} from "@/lib/types";
+import {AboutUs, BlogPost, BlogPostPreview, FilterOnTag, Page} from "@/lib/types";
+
+export const getAboutUs = async (): Promise<AboutUs> => ({
+    title: "Over ons",
+    description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt eget odio at vehicula.\n" +
+        "Maecenas a mauris vitae leo viverra fermentum. Nunc non ullamcorper augue. Integer felis quam, pulvinar\n" +
+        "eget ipsum vel, iaculis dictum nulla. In volutpat accumsan urna non auctor. In sit amet egestas mauris.\n" +
+        "Donec sem odio, imperdiet at dui at, euismod tristique ex.",
+    seoMetadata: {
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt eget odio at " +
+            "vehicula. Maecenas a mauris vitae leo viverra fermentum.",
+    },
+});
 
 export const getAllTagsToFilterOn = async (): Promise<FilterOnTag[]> => ([
     {
@@ -32,6 +45,9 @@ export const getAllTagsToFilterOn = async (): Promise<FilterOnTag[]> => ([
 ]);
 
 export const getBlogPost = async (slug: string): Promise<BlogPost> => {
+    // Zorg ervoor dat je de API-call cached, [slug]/page.tsx, roep deze
+    // functie namelijk twee keer. Caching staat standaard aan voor fetch().
+
     return {
         title: "Lorem Ipsum Blog Post",
         publishedOn: "2024-05-09T22:10:00.000Z",
@@ -135,7 +151,7 @@ export const getBlogPost = async (slug: string): Promise<BlogPost> => {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.\n" +
             "\n",
         // TODO- images
-            // "<img src=\"https://nyef.nl/blog/eerste-duik-in-python-van-javascript-developer/cover-600x.png\" alt=\"descriptive text\" style=\"max-width: 100%; height: auto;\" />",
+        // "<img src=\"https://nyef.nl/blog/eerste-duik-in-python-van-javascript-developer/cover-600x.png\" alt=\"descriptive text\" style=\"max-width: 100%; height: auto;\" />",
         seoMetadata: {
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac felis nisi. Mauris in lacus auctor, venenatis erat ac, congue magna.",
         },
