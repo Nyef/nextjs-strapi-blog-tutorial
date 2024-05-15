@@ -18,7 +18,7 @@ const Img = ({
             alt={alt || ""}
             title={title}
             width={width === undefined ? 700 : parseInt(width + "")}
-            height={height === undefined ? undefined : parseInt(height + "")}
+            height={height === undefined ? 300 : parseInt(height + "")}
             unoptimized={true}
             loading={"lazy"}
             placeholder={"empty"}

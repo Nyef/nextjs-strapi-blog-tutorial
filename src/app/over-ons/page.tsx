@@ -1,11 +1,11 @@
 import React from "react";
 import type {Metadata} from "next";
 import PageHeading from "@/components/heading/pageHeading";
-import {getAboutUs} from "@/lib/data";
 import {AboutUs} from "@/lib/types";
+import {dataFactory} from "@/lib/data/data";
 
 export async function generateMetadata(): Promise<Metadata> {
-    const aboutUs: AboutUs = await getAboutUs();
+    const aboutUs: AboutUs = await dataFactory().getAboutUs();
     return {
         title: aboutUs.title,
         description: aboutUs.seoMetadata.description,
@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const AboutUsPage = async () => {
-    const aboutUs: AboutUs = await getAboutUs();
+    const aboutUs: AboutUs = await dataFactory().getAboutUs();
     return (
         <div>
             <PageHeading>

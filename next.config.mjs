@@ -9,6 +9,16 @@ const nextConfig = {
             },
         ];
     },
+    images: {
+        remotePatterns: [
+            {
+                // Local Strapi instance:
+                hostname: "localhost",
+                // port: "1337",
+                // protocol: "http",
+            }
+        ],
+    }
 };
 
 export default nextConfig;

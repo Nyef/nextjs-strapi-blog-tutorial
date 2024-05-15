@@ -22,9 +22,9 @@ export type AboutUs = {
 
 export type Tag = {
     name: string,
-    icon: string,
     description: string,
     accentColor: string,
+    icon: string,
 };
 
 export type FilterOnTag = Tag & {
@@ -45,7 +45,6 @@ export type BlogPostPreview = {
     publishedOn: string,
     modifiedOn: string | null,
     formattedPublishedOn: string,
-    formattedModifiedOn: string | null,
     tags: Tag[],
     cover: string,
     slug: string,

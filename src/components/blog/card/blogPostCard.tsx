@@ -61,7 +61,7 @@ const BlogPostCard = ({blogPost, prominent = false}: Props) => {
                     className={twJoin(
                         "group-hover:underline font-semibold decoration-dashed line-clamp-2 overflow-hidden",
                         prominent
-                            ? "text-3xl lg:text-5xl lg:leading-snug underline-offset-4 md:underline-offset-8 decoration-2 md:decoration-4"
+                            ? "text-3xl lg:text-4xl lg:leading-snug underline-offset-4 md:underline-offset-8 decoration-2 md:decoration-4"
                             : "text-xl lg:text-2xl underline-offset-2 md:underline-offset-4 decoration-1 md:decoration-2",
                     )}
                 >

@@ -6,8 +6,8 @@ import {twJoin} from "tailwind-merge";
 type Props = ({
     as?: "span",
 } | {
-    as: "button",
-    onClick: () => void,
+    as: "a",
+    href: string,
     active?: boolean,
 }) & {
     size?: "xl" | "base",
@@ -21,9 +21,10 @@ const TagBadge = ({size = "xl", as = "span", name, icon, accentColor, descriptio
 
     return (
         <Component
+            itemProp={"keyword"}
             className={twJoin(
                 "group inline-flex flex-row items-center justify-start gap-2 rounded-full whitespace-nowrap transition-all",
-                as === "button" ? "hover:shadow-xl" : "",
+                as === "a" ? "hover:shadow-xl" : "",
                 active ? "" : "bg-slate-400 text-slate-500 hover:text-slate-700",
                 size === "xl"
                     ? "text-base md:text-xl py-1 md:py-2 px-2 md:px-3"
@@ -31,10 +32,11 @@ const TagBadge = ({size = "xl", as = "span", name, icon, accentColor, descriptio
             )}
             style={{backgroundColor: active ? accentColor : undefined}}
             title={description}
-            {..."onClick" in props ? {onClick: props.onClick} : {}}
+            {..."href" in props ? {href: props.href} : {}}
         >
             <Image
                 className={twJoin(
+                    "rounded-full",
                     size === "xl"
                         ? "size-[20px] md:size-[30px]"
                         : "size-[15px] md:size-[20px]",
