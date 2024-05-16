@@ -160,13 +160,13 @@ export class StrapiData implements Data {
         return this.convertBlogPostProps(blogPost) as BlogPost;
     };
 
-    async getBlogPosts(page: number, filterOnTags: string[]): Promise<Page<BlogPostPreview>> {
+    async getBlogPosts(pageSize: number, page: number, filterOnTags: string[]): Promise<Page<BlogPostPreview>> {
         const url: URL = new URL(`${process.env.STRAPI_API_BASE_URL}/blog-posts`);
         this.setBlogPostQueryParams(url);
 
         // Pagination
         url.searchParams.set("pagination[page]", page + "");
-        url.searchParams.set("pagination[pageSize]", "4");
+        url.searchParams.set("pagination[pageSize]", pageSize + "");
         url.searchParams.set("pagination[withCount]", "true");
 
         // Sorting

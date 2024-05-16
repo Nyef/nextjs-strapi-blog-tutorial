@@ -27,7 +27,7 @@ export class StrapiDataTutorial implements Data {
         throw new Error("Implement me");
     };
 
-    async getBlogPosts(page: number, filterOnTags: string[]): Promise<Page<BlogPostPreview>> {
+    async getBlogPosts(pageSize: number, page: number, filterOnTags: string[]): Promise<Page<BlogPostPreview>> {
         throw new Error("Implement me");
     };
 }

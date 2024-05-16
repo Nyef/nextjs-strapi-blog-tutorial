@@ -154,7 +154,7 @@ export class MockData implements Data {
         };
     };
 
-    async getBlogPosts(_page: number, _filterOnTags: string[]) {
+    async getBlogPosts(_pageSize: number, _page: number, _filterOnTags: string[]) {
         return {
             data: [
                 {

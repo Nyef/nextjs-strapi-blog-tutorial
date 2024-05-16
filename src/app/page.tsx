@@ -14,7 +14,7 @@ type Props = {
 const Home = async ({searchParams: {pagina = "1", filter}}: Props) => {
     const filterOnTags: string[] = filter?.split(";") || [];
     const blogPosts: Page<BlogPostPreview> = await dataFactory()
-        .getBlogPosts(pagina === undefined ? 1 : Number(pagina), filterOnTags);
+        .getBlogPosts(4, pagina === undefined ? 1 : Number(pagina), filterOnTags);
     const tags: Tag[] = await dataFactory().getAllTagsToFilterOn();
 
     return (

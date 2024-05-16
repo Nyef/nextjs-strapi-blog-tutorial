@@ -9,7 +9,7 @@ export interface Data {
     getAboutUs: () => Promise<AboutUs>,
     getAllTagsToFilterOn: () => Promise<Tag[]>,
     getBlogPost: (slug: string) => Promise<BlogPost>,
-    getBlogPosts: (page: number, filterOnTags: string[]) => Promise<Page<BlogPostPreview>>,
+    getBlogPosts: (pageSize: number, page: number, filterOnTags: string[]) => Promise<Page<BlogPostPreview>>,
 }
 
 export const dataFactory = (): Data => {
